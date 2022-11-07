@@ -1,0 +1,482 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@700&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Outfit', sans-serif;
+}
+
+body {
+    background-color: #1A2A33;
+
+}
+
+.icons {
+    display: flex;
+    width: 279px;
+    height: 72px;
+    background-color: #1A2A33;
+    padding: 9px;
+    border-radius: 10px;
+    margin-top: 24px;
+    margin-bottom: 17px;
+}
+
+.firstpage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 119px 24px
+}
+
+.box {
+    width: 327px;
+    height: 205px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #1F3641;
+    box-shadow: inset 0px -8px 0px #10212A;
+    border-radius: 15px;
+    padding: 24px;
+}
+
+.mark {
+    color: #A8BFC9;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+
+.first {
+    color: #A8BFC9;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.875px;
+    text-transform: uppercase;
+}
+
+.xSelected, .oSelected {
+    background-color: transparent;
+    border-radius: 10px;
+    width: 131.99px;
+    height: 54px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.xSelected {
+    background-color: transparent;
+}
+
+.cpu, .player {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 20px;
+        letter-spacing: 1px;
+        color: #1A2A33;
+        width: 327px;
+        height: 56px;
+        text-transform: uppercase;
+        border-radius: 15px;
+        padding-top: 14px;
+        padding-bottom: 22px;
+        border: none;
+}
+
+.cpu {
+    background: #F2B137;
+    box-shadow: inset 0px -8px 0px #CC8B13;
+    margin-top: 32px;
+    margin-bottom: 16px;
+}
+
+.player {
+    background: #31C3BD;
+    box-shadow: inset 0px -8px 0px #118C87;
+}
+
+.logo {
+    margin-bottom: 32.26px;
+}
+
+.active {
+    background-color: #A8BFC9;
+}
+
+.active svg path {
+    fill: #1A2A33;
+}
+
+.gamepage {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: relative;
+}
+
+.xbtn, .obtn {
+    display: none;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    padding: 0px 23px 20px 0px;
+    width: 328px;
+}
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 24px 0px 64px 0px;
+    width: 328px;
+}
+
+.turnbtn{
+    width: 96px;
+    height: 40px;
+    background-color: #1F3641;
+    box-shadow: inset 0px -4px 0px #10212A;
+    border-radius: 5px;
+    border: none;
+    color: #A8BFC9;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.875px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+}
+
+.btnrestart {
+    width: 40px;
+    height: 40px;
+    background-color: #A8BFC9;
+    box-shadow: inset 0px -4px 0px #6B8997;
+    border-radius: 5px;
+    border: none;
+}
+
+.btnrestart:hover {
+    background-color: #DBE8ED;
+}
+
+.gamebutton {
+    width: 96px;
+    height: 96px;
+    border: none;
+    background-color: #1F3641;
+    box-shadow: inset 0px -8px 0px #10212A;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.scores {
+    display: flex;
+    justify-content: center;
+    padding-right: 23px;
+    padding-left: 24px;
+    column-gap: 20px;
+}
+
+.youscore, .tiesscore, .cpuscore {
+    width: 96px;
+    height: 64px;
+    border-radius: 10px;
+    color: #1A2A33;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.youscore {
+    background-color: #31C3BD;
+    display: flex;
+    flex-direction: column;
+}
+
+.tiesscore {
+    background-color: #A8BFC9;
+    display: flex;
+    flex-direction: column;
+}
+
+.cpuscore {
+    background-color: #F2B137;
+    display: flex;
+    flex-direction: column;
+}
+
+.scoretextyou, .scoretextties, .scoretextcpu {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.75px;
+}
+
+.resultO, .resultties, .resultX {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+    letter-spacing: 1.25px;
+}
+
+.showx:hover{
+    background-image: url(./assets/icon-x-outline\ -\ resized\ phone.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.showo:hover{
+    background-image: url(./assets/icon-o-outline-resized\ phone.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.ogame {
+    display: none;
+}
+
+.popupbg {
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    opacity: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.replaypopup, .winXpopup, .lostXpopup, .tiedpopup {
+    display: none;
+    width: 100%;
+    height: 228px;
+    background-color: #1F3641;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 24px;
+    position: absolute;
+    top: 220px;
+}
+
+.replayquestion, .roundtied {
+    color: #A8BFC9;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    letter-spacing: 1.5px;
+}
+
+.replaybuttons, .winXbuttons, .winXround, .lostXbuttons, .lostXround, .tiedbuttons {
+    display: flex;
+    justify-content: center;
+    column-gap: 16px;
+}
+
+.winXround, .lostXround {
+    column-gap: 9px;
+    padding-bottom: 24px;
+}
+
+.cancelbtn, .replaybtn, .winXquit, .winXnext, .lostXquit, .lostXnext, .tiedbtn {
+    color: #1A2A33;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 1px;
+    width: 151px;
+    height: 52px;
+    border-radius: 10px;
+    border: none;
+}
+
+.cancelbtn, .winXquit, .lostXquit {
+    background: #A8BFC9;
+    box-shadow: inset 0px -4px 0px #6B8997;
+}
+
+.replaybtn, .winXnext, .lostXnext, .tiedbtn {
+    background: #F2B137;
+    box-shadow: inset 0px -4px 0px #CC8B13;
+}
+
+.Xwontext, .Xlosttext {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 16px;
+}
+
+.Xwon, .Xlost {
+    color: #A8BFC9;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17.64px;
+    letter-spacing: 0.88px;
+} 
+
+.winXstart, .lostXstart {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30.24px;
+    letter-spacing: 1.5px;
+}
+
+.winXstart {
+    color: #31C3BD;
+}
+
+.lostXstart {
+    color: #F2B137;
+}
+
+
+/* TABLET MEDIA QUERY  */
+
+
+@media screen and (min-width: 767.5px) {
+
+    .box {
+        width: 460px;
+        height: 205px;
+        border-radius: 10px;
+        padding: 24px;
+    }
+
+    .cpu, .player {
+        font-size: 20px;
+        line-height: 25.2px;
+        letter-spacing: 1.25px;
+        width: 460px;
+        height: 67px;
+        padding-top: 17px;
+        padding-bottom: 25px;
+    }
+
+    .icons {
+        display: flex;
+        justify-content: center;
+        width: 412px;
+    }
+
+    .xSelected, .oSelected {
+        width: 198px;
+    }
+
+    .logo {
+        margin-bottom: 40.26px;
+    }
+
+    .buttons {
+        padding: 0px 154px 19px 0px;
+        width: 460px;
+    }
+
+
+    .gamebutton {
+        width: 140px;
+        height: 140px;
+    }
+
+
+    .turnbtn {
+        width: 140px;
+        height: 52px;
+        gap: 13px;
+        margin-left: 85.03px;
+        margin-right: 108px;
+        font-size: 16px;
+        line-height: 20.16px;
+        letter-spacing: 1px;
+    }
+
+    .btnrestart {
+        width: 52px;
+        height: 52px;
+    }
+
+        
+    .scores {
+        padding-right: 154px;
+        padding-left: 155px;
+        column-gap: 19px;
+    }
+
+    .youscore, .tiesscore, .cpuscore {
+    width: 140px;
+    height: 72px;
+    border-radius: 15px;
+
+}
+
+
+    .scoretextyou, .scoretextties, .scoretextcpu {
+    font-size: 14px;
+    line-height: 17.64px;
+    letter-spacing: 0.88px;
+}
+
+    .resultO, .resultties, .resultX {
+        font-size: 24px;
+        line-height: 30.24px;
+        letter-spacing: 1.5px;
+    }
+
+    .header {
+        display: flex;
+        align-items: center;
+        padding: 201px 0px 20px 0px;
+        width: 460px;
+
+    }
+}
+
+/* DESKTOP MEDIA QUERY  */
+
+
+@media screen and (min-width: 1439.5px) {
+
+    .box {
+        border-radius: 15px;
+    }
+
+    .buttons {
+        padding: 0px 0px 19px 0px;
+    }
+
+    .scores {
+        padding-right: 490px;
+        padding-left: 490px;
+        margin-bottom: 138px;
+    }
+
+
+    .header {
+        display: flex;
+        align-items: center;
+        padding: 139px 0px 20px 0px;
+    }
+
+
+}
