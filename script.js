@@ -27,6 +27,9 @@ const oScore = document.querySelector(".resultO");
 const xWinNextRound = document.querySelector(".winXnext");
 const oWinNextRound = document.querySelector(".lostXnext");
 const tiedNextRound = document.querySelector(".tiedbtn");
+const quit = document.querySelector(".winXquit");
+const quit2 = document.querySelector(".lostXquit");
+const quit3 = document.querySelector(".cancelbtn");
 
 let turn = "x";
 let arrayX = [];
@@ -75,6 +78,63 @@ replay.onclick = () => {
   replayPopUp.style.display = "flex";
 };
 
+quit.onclick = () => {
+  popUpBackground.style.display = "none";
+  xWinPopUp.style.display = "none";
+  firstPage.style.display = "flex";
+  gamePage.style.display = "none";
+  arrayX = [];
+  arrayO = [];
+  removeIcons();
+  xCount = 0;
+  xScore.innerHTML = xCount;
+  oCount = 0;
+  oScore.innerHTML = oCount;
+  tieCount = 0;
+  tiesScore.innerHTML = tieCount;
+  gameOver = false;
+  turn = "x";
+  turnChange();
+};
+
+quit2.onclick = () => {
+  popUpBackground.style.display = "none";
+  xLostPopUp.style.display = "none";
+  firstPage.style.display = "flex";
+  gamePage.style.display = "none";
+  arrayX = [];
+  arrayO = [];
+  removeIcons();
+  xCount = 0;
+  xScore.innerHTML = xCount;
+  oCount = 0;
+  oScore.innerHTML = oCount;
+  tieCount = 0;
+  tiesScore.innerHTML = tieCount;
+  gameOver = false;
+  turn = "x";
+  turnChange();
+};
+
+const tiedCancel = () => {
+  popUpBackground.style.display = "none";
+  tiedPopUp.style.display = "none";
+  firstPage.style.display = "flex";
+  gamePage.style.display = "none";
+  arrayX = [];
+  arrayO = [];
+  removeIcons();
+  xCount = 0;
+  xScore.innerHTML = xCount;
+  oCount = 0;
+  oScore.innerHTML = oCount;
+  tieCount = 0;
+  tiesScore.innerHTML = tieCount;
+  gameOver = false;
+  turn = "x";
+  turnChange();
+};
+
 restartCancel.onclick = () => {
   popUpBackground.style.display = "none";
   replayPopUp.style.display = "none";
@@ -93,6 +153,8 @@ restartButton.onclick = () => {
   tieCount = 0;
   tiesScore.innerHTML = tieCount;
   gameOver = false;
+  turn = "x";
+  turnChange();
   if (player1 === "o" && playCpu) {
     setTimeout(cpuMove, 500);
   }
@@ -125,7 +187,6 @@ oWinNextRound.onclick = () => {
 };
 
 const tiedNext = () => {
-  console.log("Hello");
   popUpBackground.style.display = "none";
   tiedPopUp.style.display = "none";
   arrayX = [];
@@ -232,8 +293,18 @@ function winX() {
       xWinPopUp.style.display = "flex";
       if (player1 === "x") {
         xWinText.innerHTML = "YOU WON!";
+        arrayWin[i].forEach((element) => {
+          gameButtons[element].classList.add("winFillX");
+          gameButtons[element].children[0].children[0].children[0].style.fill =
+            "#1F3641";
+        });
       } else {
         xWinText.innerHTML = "OH NO, YOU LOST...";
+        arrayWin[i].forEach((element) => {
+          gameButtons[element].classList.add("winFillX");
+          gameButtons[element].children[0].children[0].children[0].style.fill =
+            "#1F3641";
+        });
       }
       xCount++;
       xScore.innerHTML = xCount;
@@ -255,9 +326,20 @@ function winO() {
       popUpBackground.style.display = "block";
       xLostPopUp.style.display = "flex";
       if (player1 === "x") {
-        xWinText.innerHTML = "OH NO, YOU LOST...";
+        oWinText.innerHTML = "OH NO, YOU LOST...";
+
+        arrayWin[i].forEach((element) => {
+          gameButtons[element].classList.add("winFillO");
+          gameButtons[element].children[1].children[0].children[0].style.fill =
+            "#1F3641";
+        });
       } else {
-        xWinText.innerHTML = "YOU WON!";
+        oWinText.innerHTML = "YOU WON!";
+        arrayWin[i].forEach((element) => {
+          gameButtons[element].classList.add("winFillO");
+          gameButtons[element].children[1].children[0].children[0].style.fill =
+            "#1F3641";
+        });
       }
       oCount++;
       oScore.innerHTML = oCount;
@@ -273,6 +355,7 @@ function tied() {
     tiedPopUp.style.display = "flex";
     tieCount++;
     tiesScore.innerHTML = tieCount;
+    gameOver = true;
   }
 }
 
@@ -280,6 +363,10 @@ function removeIcons() {
   gameButtons.forEach((button) => {
     button.children[0].style.display = "none";
     button.children[1].style.display = "none";
+    button.children[0].children[0].children[0].style.fill = "#31C3BD";
+    button.children[1].children[0].children[0].style.fill = "#F2B137";
+    button.classList.remove("winFillX");
+    button.classList.remove("winFillO");
   });
 }
 
@@ -291,8 +378,8 @@ gameCpu.onclick = () => {
   playCpu = true;
   if (player1 === "o") {
     setTimeout(cpuMove, 500);
-    p2Text.innerHTML = "O (YOU)";
-    p1Text.innerHTML = "X (CPU)";
+    p2Text.innerHTML = "X (CPU)";
+    p1Text.innerHTML = "O (YOU)";
   }
 };
 
